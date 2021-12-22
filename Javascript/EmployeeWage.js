@@ -99,3 +99,28 @@ let MaxWorkingHr=160;
     let wage=empHr*WagePerHr;
     console.log('UC5-Total wage of ' +DayCount+'days and '+empHr+' Hrs : '+wage+'  '+empchek );
 }
+
+//UC6
+let EmployeeWageArr=new Array();
+function Totalwage(empHr)
+{
+    let wage=empHr*WagePerHr;
+    console.log(wage);
+    return wage;
+}
+{    
+    while(DayCount<NumberOfWorkingDays&&empHr<MaxWorkingHr)
+    {
+        let emp=Math.floor(Math.random()*10)%3;
+        empHr=empHr+CheckEmployeeWage(emp);
+        EmployeeWageArr.push(Totalwage(empHr));
+    }
+    for(let element=0;element<EmployeeWageArr.length;element++) {
+        console.log(EmployeeWageArr[element]);
+        
+    }
+    let wage= Totalwage(empHr);
+    console.log('UC6-Total wage of ' +DayCount+'days and '+empHr+' Hrs : '+wage+'  '+empchek );
+}
+
+//UC7
