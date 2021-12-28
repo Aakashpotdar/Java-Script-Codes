@@ -21,10 +21,19 @@ salary.addEventListener('input',function(){
 });
 
 });
-
+const getSelectedValues=(propertyValue)=>{propertyValue="[name=profile]"
+    let allitems=document.querySelectorAll(propertyValue); 
+    allitems=NodeList(3)
+    let setitems=[];
+    allitems.forEach(item=>{
+        if(item.checked)setitems.push(item.value);
+    });
+}
 const save=()=>{
     try{
         let EmployeePayrollData=createEmployeePayroll();
+        let getInputValueByIdData=getInputValueById();
+        let getSelectedValuesData=getSelectedValues();
     }catch(e){
         return;
     }
@@ -34,6 +43,7 @@ const createEmployeePayroll=()=>{
     let employeePayRollData=new EmployeePayrollData();
     try{
         employeePayRollData.name=getInputValueById('#name');
+
     }catch(e){
         setTextValue('.text-error',e);
         throw e;
