@@ -5,6 +5,8 @@
             <link rel="stylesheet" href="EmployeePayrollSheet.css">
             <script defer src="EmployeePayroll.js"></script>
             <script defer src="EmployeePayrollData.js"></script>
+            <script defer src="home.js"></script>
+            
         </head>
        <body>
            <header class="header-content header">
@@ -17,12 +19,12 @@
                </div>
            </header>
                <div class="form-content">
-                <form class="form" action="EmployeePayrollData.js" onsubmit="save(event);return false">
+                <form class="form" action="/Payroll.html" onsubmit="save(event);return false">
                     <div class="form-head"> Employee PayRoll form</div>
                     <div class="row-content">
                         <label class="label text" for="name">Name</label>
                         <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
-                        <error-output class="text-error" for="text"></error-output>
+                        <error-output id="text-error" for="text"></error-output>
                     </div>
 
                     <div class="row-content">
@@ -116,10 +118,24 @@
                                     <option value="Jan">January</option>
                                     <option value="Feb">Febuary</option>
                                     <option value="Mar">March</option>
+                                    <option value="Apr">April</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">June</option>
+                                    <option value="Jul">July</option>
+                                    <option value="Aug">August</option>
+                                    <option value="Sep">September</option>
+                                    <option value="Oct">Octomber</option>
+                                    <option value="Nov">Novenmber</option>
+                                    <option value="Dec">December</option>
+
                                 </select>
                                 <select id="year" name="year">
                                     <option value="2021">2021</option>
                                     <option value="2020">2020</option>
+                                    <option value="2021">2019</option>
+                                    <option value="2020">2018</option>
+                                    <option value="2021">2017</option>
+                                    <option value="2020">2016</option>
                                 </select>
                             </div>
                             </div>
@@ -132,7 +148,7 @@
                             <div class="buttonParent">
                                 <a href="./EmployeePayRoll.html" class="resetButton button cancelButton">Cancel</a>
                                 <div class="submit-reset">
-                                    <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                                    <button onclick="save(event)" type="submit" class="button submitButton" id="submitButton">Submit</button>
                                     <button type="reset" class="resetButton button">Reset</button>
                                 </div>
                             </div>
